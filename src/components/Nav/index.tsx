@@ -6,6 +6,7 @@ class Nav extends React.Component {
   sliderRef = React.createRef();
   onMouseEnter = (e: any) => {
     this.sliderRef.current.style.left = e.target.offsetLeft + "px";
+    this.sliderRef.current.style.width = e.target.clientWidth + "px";
   };
   render() {
     return (
@@ -15,7 +16,7 @@ class Nav extends React.Component {
             <NavLink
               key={index}
               to={item.key}
-              onMouseEnter={this.onMouseEnter}
+              onClick={this.onMouseEnter}
               className={({ isActive }) =>
                 [isActive ? "active" : "", "nav-item"].join(" ")
               }
