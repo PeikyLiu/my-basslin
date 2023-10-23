@@ -1,0 +1,18 @@
+.nav {
+  background-color: #fff;
+  position: relative;
+  display: flex;
+}
+.nav .nav-item {
+  background-color: green;
+  text-decoration: none;
+  width: 80px;
+  height: 32px;
+}
+.nav .slider-item {
+  background-color: #f97f51;
+  position: absolute;
+  width: 80px;
+  height: 32px;
+  right: 0;
+}
