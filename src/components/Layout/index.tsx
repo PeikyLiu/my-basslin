@@ -1,12 +1,14 @@
 import React from "react";
 import Nav from "../Nav";
-import Pages from "../../pages";
+import { Outlet } from "react-router-dom";
 class Layout extends React.Component {
   render() {
     return (
-      <div>
+      <div className="haha">
         <Nav></Nav>
-        <Pages>123</Pages>
+        <div className="content">
+          <Outlet></Outlet>
+        </div>
       </div>
     );
   }

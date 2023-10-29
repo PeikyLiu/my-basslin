@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import routeConfig from "../../routes/config.ts";
+import routeConfig from "@/routes/config.tsx";
+
 import "./index.less";
 class Nav extends React.Component {
   sliderRef = React.createRef();
@@ -9,13 +10,17 @@ class Nav extends React.Component {
     this.sliderRef.current.style.width = e.target.clientWidth + "px";
   };
   render() {
+    const filterRoutes: [] = routeConfig[0].children?.filter(
+      (item) => !item.index
+    );
     return (
       <div className="nav">
-        {routeConfig.menus.map((item, index) => {
+        {filterRoutes.map((item, index) => {
+          console.log(item, 123);
           return (
             <NavLink
               key={index}
-              to={item.key}
+              to={item.path}
               onClick={this.onMouseEnter}
               className={({ isActive }) =>
                 [isActive ? "active" : "", "nav-item"].join(" ")

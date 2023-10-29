@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import config from "./config";
-import routeConfig from "../routes/config.ts";
+import routeConfig from "@/routes/config.tsx";
 class Pages extends React.Component {
   render() {
     return (
