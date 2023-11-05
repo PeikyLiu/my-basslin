@@ -2,7 +2,7 @@ import React from "react";
 import DiaryList from "@/components/DiaryList";
 import { Modal, Input } from "antd";
 import type { InputRef } from "antd";
-import axios from "axios";
+import service from "@/service/index";
 class Diary extends React.Component {
   state = {
     showModal: false,
@@ -19,9 +19,9 @@ class Diary extends React.Component {
     // axios.get("http://localhost:3000").then((res) => {
     //   console.log(res);
     // });
-    axios
-      .post("http://localhost:3000/api/checkcode", { code: value })
-      .then((res) => {
+    service
+      .loginCode({ code: value })
+      .then((res: { data: { data: { token: any } } }) => {
         const { token } = res.data.data;
         if (token) {
           localStorage.setItem("access_token", token);

@@ -3,6 +3,7 @@ import type { RouteObject } from "react-router-dom";
 import Diary from "@/pages/diary/Diary";
 import Homepage from "@/pages/homepage/Homepage";
 import Layout from "@/components/Layout";
+import Login from "@/pages/login/Login";
 interface myRouteObject extends RouteObject {
   title?: string;
 }
@@ -26,6 +27,11 @@ const routes: myRouteObject[] = [
         title: "日记",
       },
     ],
+  },
+  {
+    path: "/login",
+    element: <Login />,
+    title: "登录",
   },
 ];
 
